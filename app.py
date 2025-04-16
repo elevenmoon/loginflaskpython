@@ -34,9 +34,6 @@ def login():
         account = cur.fetchone()
 
         if account:
-            session['loggedin'] = True
-            session['id'] = account['id']
-            session['nombre'] = account['user']
             return render_template('admin.html')
         else:
             msg = 'Invalid credentials. Please try again.'
