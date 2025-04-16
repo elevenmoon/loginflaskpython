@@ -32,8 +32,13 @@ def login():
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM users WHERE user=%s AND password=%s", (_correo, _password,))
         account = cur.fetchone()
+        print(account)
 
         if account:
+            session['logueado'] = True
+            session['id'] = account['id']
+            session['nombre'] = account['user']
+            print(session)
             return render_template('admin.html')
         else:
             msg = 'Invalid credentials. Please try again.'
