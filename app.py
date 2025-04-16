@@ -43,5 +43,5 @@ def login():
             return render_template('index.html', mensaje='usuario incorrecto')
 
 if __name__ ==  '__main__':
-    app.secret_key = 'romanlugo'
-    app.run(debug=True, host='0.0.0.0', port=3306, threaded=True)
+    app.secret_key = 'romanlugo super secret key'
+    app.run(debug=False, host='0.0.0.0', port=3306, threaded=True)
