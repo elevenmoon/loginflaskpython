@@ -37,7 +37,7 @@ def login():
             session['loggedin'] = True
             session['id'] = account['id']
             session['nombre'] = account['user']
-            return render_template('admin.html', session=account)
+            return render_template('admin.html')
         else:
             msg = 'Invalid credentials. Please try again.'
             return render_template('index.html', mensaje='usuario incorrecto')
