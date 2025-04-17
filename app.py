@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, redirect, request, Response, session
 from flask_mysqldb import MySQL, MySQLdb
+from flask_session import Session
 
 app = Flask(__name__,template_folder='template')
 
@@ -46,5 +47,8 @@ def login():
 
 if __name__ ==  '__main__':
     app.secret_key = 'romanlugo super secret key'
+    app.config["SESSION_PERMANENT"] = False
     app.config['SESSION_TYPE'] = 'filesystem'
     app.run(debug=True, host='0.0.0.0', port=3306, threaded=True)
+
+Session(app)
