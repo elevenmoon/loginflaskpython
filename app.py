@@ -48,7 +48,7 @@ def login():
 if __name__ ==  "__main__":
     app.secret_key = 'romanlugo super secret key'
     app.config["SESSION_PERMANENT"] = False
-    app.config['SESSION_TYPE'] = 'filesystem'
+    app.config["SESSION_TYPE"] = 'filesystem'
     app.run(debug=True, port=3306, threaded=True)
 
 Session(app)
