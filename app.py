@@ -45,9 +45,10 @@ def login():
             msg = 'Invalid credentials. Please try again.'
             return render_template('index.html', mensaje='usuario incorrecto')
 
-if __name__ ==  '__main__':
+if __name__ ==  "__main__":
     app.secret_key = 'romanlugo super secret key'
     app.config["SESSION_PERMANENT"] = False
-    app.run(debug=True, host='0.0.0.0', port=3306, threaded=True)
+    app.config['SESSION_TYPE'] = 'filesystem'
+    app.run(debug=True, port=3306, threaded=True)
 
 Session(app)
